@@ -1,0 +1,44 @@
+URxvt.font:                     xft:Source Code Pro Light:pixelsize=10
+URxvt.boldFont:                 xft:Source Code Pro Light:pixelsize=10
+URxvt*.background: #202020
+URxvt*.foreground: #f8f8f8
+URxvt*.cursorColor: #a0a0a0
+
+URxvt*.keysym.M-x: perl:reload-colors
+URxvt*.dynamicColors: on
+
+! black
+URxvt*.color0: #404040
+URxvt*.color8: #606060
+! red
+URxvt*.color1: #997766
+URxvt*.color9: #bb9988
+! green
+URxvt*.color2: #889977
+URxvt*.color10: #aabb99
+! yellow
+URxvt*.color3: #bbaa88
+URxvt*.color11: #ddccaa
+! blue
+URxvt*.color4: #444466
+URxvt*.color12: #666688
+! magenta
+URxvt*.color5: #775566
+URxvt*.color13: #997788
+! cyan
+URxvt*.color6: #558877
+URxvt*.color14: #77aa99
+! white
+URxvt*.color7: #d6d6d6
+URxvt*.color15: #f8f8f8
+! underline when default
+URxvt*.colorUL: #b1b1b2
+
+! urxvt
+URxvt.cursorBlink: 1
+URxvt.cursorUnderline: 1
+URxvt*scrollBar:        false
+URxvt.perl-ext-common:  default,matcher
+URxvt.url-launcher:     /usr/bin/firefox
+URxvt.underlineURLs:    true
+URxvt.matcher.button:   1
