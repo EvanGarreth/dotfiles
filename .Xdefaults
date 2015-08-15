@@ -1,38 +1,53 @@
-URxvt.font:                     xft:Source Code Pro Light:pixelsize=10
-URxvt.boldFont:                 xft:Source Code Pro Light:pixelsize=10
-URxvt*.background: #202020
-URxvt*.foreground: #f8f8f8
-URxvt*.cursorColor: #a0a0a0
+! Base16 Colors
+! Scheme: mrmrs (http://clrs.cc)
 
-URxvt*.keysym.M-x: perl:reload-colors
-URxvt*.dynamicColors: on
+#define base00 #111111
+#define base01 #333333
+#define base02 #555555
+#define base03 #777777
+#define base04 #999999
+#define base05 #bbbbbb
+#define base06 #dddddd
+#define base07 #ffffff
+#define base08 #ff4136
+#define base09 #ff851b
+#define base0A #ffdc00
+#define base0B #2ecc40
+#define base0C #7fdbff
+#define base0D #0074d9
+#define base0E #b10dc9
+#define base0F #85144b
 
-! black
-URxvt*.color0: #404040
-URxvt*.color8: #606060
-! red
-URxvt*.color1: #997766
-URxvt*.color9: #bb9988
-! green
-URxvt*.color2: #889977
-URxvt*.color10: #aabb99
-! yellow
-URxvt*.color3: #bbaa88
-URxvt*.color11: #ddccaa
-! blue
-URxvt*.color4: #444466
-URxvt*.color12: #666688
-! magenta
-URxvt*.color5: #775566
-URxvt*.color13: #997788
-! cyan
-URxvt*.color6: #558877
-URxvt*.color14: #77aa99
-! white
-URxvt*.color7: #d6d6d6
-URxvt*.color15: #f8f8f8
-! underline when default
-URxvt*.colorUL: #b1b1b2
+*.foreground:   base02
+*.background:   base07
+*.cursorColor:  base02
+
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
+
+*.color8:       base03
+*.color9:       base09
+*.color10:      base01
+*.color11:      base02
+*.color12:      base04
+*.color13:      base06
+*.color14:      base0F
+*.color15:      base07
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*.color16:      base09
+*.color17:      base0F
+*.color18:      base01
+*.color19:      base02
+*.color20:      base04
+*.color21:      base06
 
 ! urxvt
 URxvt.cursorBlink: 1
@@ -42,3 +57,7 @@ URxvt.perl-ext-common:  default,matcher
 URxvt.url-launcher:     /usr/bin/firefox
 URxvt.underlineURLs:    true
 URxvt.matcher.button:   1
+URxvt.font:                     xft:Source Code Pro Light:pixelsize=10
+URxvt.boldFont:                 xft:Source Code Pro Light:pixelsize=10
+URxvt*.dynamicColors: on
+URxvt.intensityStyles: false

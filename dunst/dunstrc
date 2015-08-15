@@ -1,5 +1,5 @@
 [global]
-    font = Fira Mono Medium 10
+    font = Source Code Pro Light 10
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -149,7 +149,7 @@
 
 [frame]
     width = 2
-    color = "#ebdbb2"
+    color = "#7fdbff"
 
 [shortcuts]
 
@@ -175,18 +175,18 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    foreground = "#ebdbb2"
-    background = "#1d2021"
+    foreground = "#5a5a5a"
+    background = "#e1e1e1"
     timeout = 10
 
 [urgency_normal]
-    foreground = "#ebdbb2"
-    background = "#1d2021"
+    foreground = "#5a5a5a"
+    background = "#e1e1e1"
     timeout = 10
 
 [urgency_critical]
-    foreground = "#ebdbb2"
-    background = "#1d2021"
+    foreground = "#5a5a5a"
+    background = "#e1e1e1"
     timeout = 10
 
 
