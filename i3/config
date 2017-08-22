@@ -11,7 +11,7 @@ exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 1280x0 --rotate norma
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id bash $HOME/.dotfiles/.chdock.sh
 exec_always --no-startup-id bash $HOME/.dotfiles/.mousecheck.sh
-exec --no-startup-id /usr/bin/redshift -l 32.7:97.1 -t 6500:3700 -g 0.8
+exec --no-startup-id /usr/bin/redshift -l 32.7:-97.1 -t 6500:3700 -g 0.8
 exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
 exec --no-startup-id bash $HOME/Pictures/wallpapers/wallpaper.sh
 exec --no-startup-id pulseaudio --start
