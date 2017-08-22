@@ -1,0 +1,1 @@
+/home/evan/.config/polybar/launch.sh

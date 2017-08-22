@@ -2,19 +2,18 @@ set $mod Mod4
 
 for_window [class="^.*"] border pixel 2
 
-#I like 'em small
 gaps inner 2
 gaps outer 5
 smart_gaps on
 smart_borders no_gaps
 
-exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 1280x0 --rotate normal --output VGA1 --mode 1280x1024 --pos 0x0 --rotate normal --left-of eDP1
-exec_always --no-startup-id bash $HOME/.chdock.sh
-exec --no-startup-id /usr/bin/redshift -l 32.7:97.1 -t 3200:2900 -g 0.8 -s 0
-exec --no-startup-id /usr/bin/compton --config $HOME/.compton.conf
+exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 1280x0 --rotate normal --output VGA1 --mode 1920x1080 --pos 0x0 --rotate normal --right-of eDP1
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id bash $HOME/.dotfiles/.chdock.sh
+exec_always --no-startup-id bash $HOME/.dotfiles/.mousecheck.sh
+exec --no-startup-id /usr/bin/redshift -l 32.7:97.1 -t 6500:3700 -g 0.8
 exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
 exec --no-startup-id bash $HOME/Pictures/wallpapers/wallpaper.sh
-exec --no-startup-id bash $HOME/.mousecheck.sh
 exec --no-startup-id pulseaudio --start
 exec –no-startup-id sleep 3 && xfce4-power-manager
 exec xmodmap .xmodmap
@@ -104,16 +103,28 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Name the workspaces
-set $tag1 "1:"
-set $tag2 "2:"
-set $tag3 "3:"
-set $tag4 "4:"
-set $tag5 "5:"
-set $tag6 "6:"
-set $tag7 "7:"
-set $tag8 "8:"
-set $tag9 "9:"
-set $tag10 "10:"
+#set $tag1 "1:"
+#set $tag2 "2:"
+#set $tag3 "3:"
+#set $tag4 "4:"
+#set $tag5 "5:"
+#set $tag6 "6:"
+#set $tag7 "7:"
+#set $tag8 "8:"
+#set $tag9 "9:"
+#set $tag10 "10:"
+#set $tag11 "11:"
+set $tag1 1
+set $tag2 2
+set $tag3 3
+set $tag4 4
+set $tag5 5
+set $tag6 6
+set $tag7 7
+set $tag8 8
+set $tag9 9
+set $tag10 10
+set $tag11 11
 
 # switch to workspace
 bindsym $mod+1 workspace $tag1
@@ -126,9 +137,10 @@ bindsym $mod+7 workspace $tag7
 bindsym $mod+8 workspace $tag8
 bindsym $mod+9 workspace $tag9
 bindsym $mod+0 workspace $tag10
+bindsym $mod+grave workspace $tag11
 
 bindsym $mod+period workspace next
-bindsym $mod+comma workspace prev 
+bindsym $mod+comma workspace prev
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $tag1
@@ -145,14 +157,20 @@ bindsym $mod+Shift+0 move container to workspace $tag10
 # move workspace to left and right monitors
 bindsym $mod+Shift+bracketleft move workspace to output left
 bindsym $mod+Shift+bracketright move workspace to output right
+bindsym $mod+m sticky toggle
 
-assign [class="(?i)libreoffice"] → $tag3
-assign [class="(?i)subl3"] → $tag3
 assign [class="(?i)firefox"] → $tag1
 assign [class="(?i)chromium"] → $tag1
-assign [class="(?i)gimp"] → $tag5
 assign [class="(?i)urxvt"] → $tag2
+assign [class="(?i)urxvt"] → $tag2
+assign [class="(?i)subl3"] → $tag3
+assign [class="(?i)atom"] → $tag3
+assign [class="(?i)discord"] → $tag4
+assign [class="(?i)libreoffice"] → $tag5
+assign [class="(?i)gimp"] → $tag5
+assign [class="com-osbuddy-loader-Loader"] → $tag8
 assign [class="Steam"] → $tag9
+
 #Spotify beta doesn't seem to work with assign
 for_window [class="(?i)spotify"] move to workspace $tag6
 for_window [class="Steam" title="Game Info - *"] move to workspace $tag4
@@ -192,38 +210,41 @@ mode "resize"
 focus_follows_mouse no
 
 bindsym $mod+r mode "resize"
-                        #name    #top    #border #text
-client.focused          #7fdbff #7fdbff #7fdbff #7fdbff
+                        #name    #top    #text  #border?
+client.focused          #7fdbff #7fdbff #ffffff #7fdbff
 client.focused_inactive #BBBBBB #BBBBBB #BBBBBB #BBBBBB
-client.unfocused        #202020 #202020 #888888 #292d2e
+client.unfocused        #CCCCCC #CCCCCC #000000 #CCCCCC
 client.urgent           #ff4136 #ff4136 #ff4136 #ff4136
 client.placeholder      #000000 #0c0c0c #7fdbff #000000
 
 client.background       #ffffff
 
-bar
-{
-    position top
-    status_command i3blocks -c ~/.i3/i3blocks.conf
+#bar
+#{
+    #mode hide
+    #hidden_state hide
+    #modifier Mod1
+#    position top
+#    status_command i3blocks -c ~/.i3/i3blocks.conf
 
-    tray_output none
-    separator_symbol " "
+#    tray_output none
+#    separator_symbol " "
 
-    font pango: Source Code Pro Light 8
+#    font pango: Source Code Pro Light 8
 
-    strip_workspace_numbers yes
+#    strip_workspace_numbers yes
 
-    colors
-    {
-        statusline #5a5a5a
-        background #f0f0f0
-                           #border #bg     #text
-        focused_workspace  #f0f0f0 #7fdbff #5a5a5a
-        active_workspace   #f0f0f0 #BBBBBB #5a5a5a
-        inactive_workspace #f0f0f0 #f0f0f0 #5a5a5a
-        urgent_workspace   #f0f0f0 #ff4136 #5a5a5a
-    }
-}
+#    colors
+#    {
+#        statusline #5a5a5a
+#        background #f0f0f0
+#                           #border #bg     #text
+#        focused_workspace  #f0f0f0 #7fdbff #5a5a5a
+#        active_workspace   #f0f0f0 #BBBBBB #5a5a5a
+#        inactive_workspace #f0f0f0 #f0f0f0 #5a5a5a
+#        urgent_workspace   #f0f0f0 #ff4136 #5a5a5a
+#    }
+#}
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness

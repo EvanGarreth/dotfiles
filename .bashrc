@@ -1,4 +1,7 @@
+#source ~/.dotfiles/.bashrc
+
  alias myip='curl -s checkip.dyndns.org | cut -f 6 -d " " | cut -f 1 -d "<"'
+ alias speedtest='wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip'
 
  export EDITOR=nano
 
@@ -60,8 +63,8 @@ fi
 #export PS1="\[$(tput setaf 1)\]┌\[$(tput setaf 7)\][\w]\n\[$(tput setaf 1)\]\$(if [[ \$? == 0 ]]; then echo \"\[$(tput setaf 1)\]└──\"; else echo \"\[$(tput setaf 1)\]└──\"; fi) \[$(tput setaf 7)\]"
 #fi
 
-PS1="[\[\e[1;37m\]\W\[\e[0m\]]\[\e[1;37m\]:\[\e[0m\] "
-
+#PS1="[\[\e[1;37m\]\W\[\e[0m\]]\[\e[1;37m\]:\[\e[0m\] "
+export PS1="[\u@\h \W]\\$ \[$(tput sgr0)\]"
 
 # ls after a cd
 function cd()
